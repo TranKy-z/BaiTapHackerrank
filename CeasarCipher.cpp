@@ -1,7 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// tư duy vòng tròn
 string caesarCipher(string s, int k) {
+
+    k = k % 26;
+
+    for (int i = 0; i < s.size(); i++) {
+    if ( s[i] >= 'a' && s[i] <= 'z'){
+        s[i] = s[i] - 'a';
+        int val = s[i];
+        val = (val + k) % 26;
+        s[i] = val + 'a';
+    } else if( s[i] >= 'A' && s[i] <= 'Z'){
+        s[i] = s[i] - 'A';
+        int val = s[i];
+        val = (val + k) % 26;
+        s[i] = val + 'A';
+    }
+
+    }
+    return s;
+
+/*string caesarCipher(string s, int k) {
 k = k % 26;
 bool lakytu = {false};
 string p = "";
@@ -31,4 +51,4 @@ for (int i = 0; i < s.size(); i++){
             }
             }
             m.push_back(p[i]);
-    }
+    } */
