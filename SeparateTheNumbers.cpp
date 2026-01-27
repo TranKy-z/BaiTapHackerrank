@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 string separateNumbers(string s) {
-    for (int i = 0; i <= s.size()/2; i++){
+    for (int i = 1; i <= s.size()/2; i++){
         string temp = s.substr(0, i);
         long long num = stoll(temp);
         long long firstnumVal = num;
